@@ -3,40 +3,198 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  min-height: 100vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* ===== CONTAINER ===== */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* ===== BUTTONS LAYOUT ===== */
+.btns {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.btns a {
+  width: 100%;
+}
+
+.btns button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1em;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ===== BALANCE SECTION ===== */
+.balance {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 3rem 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  min-height: 60vh;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.balance h1 {
+  font-size: 2.5em;
+  margin: 0;
+  color: #0066cc;
+}
+
+.balance input {
+  padding: 1rem;
+  font-size: 1.1em;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 250px;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+}
+
+.balance input:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+.balance input[type="number"] {
+  text-align: center;
+}
+
+.balance button {
+  min-width: 150px;
+  padding: 1rem 2rem;
+  font-size: 1em;
+}
+
+.balance > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.balance > div button {
+  background-color: #666;
+}
+
+.balance > div button:hover {
+  background-color: #444;
+}
+
+/* ===== TRANSACTION TABLE ===== */
+.transaction {
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.transaction table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+.transaction thead {
+  background-color: #f9f9f9;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.transaction th {
+  padding: 1.25rem;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95em;
+  letter-spacing: 0.5px;
+}
+
+.transaction td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #f0f0f0;
+  color: #666;
+}
+
+.transaction tbody tr:hover {
+  background-color: #fafafa;
+}
+
+.transaction tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===== BUTTON CLASSES ===== */
+.btn {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  background-color: #0052a3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .balance {
+    padding: 2rem 1.5rem;
+    min-height: auto;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .balance h1 {
+    font-size: 2em;
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .transaction {
+    padding: 1.5rem;
+  }
 
-.read-the-docs {
-  color: #888;
+  .transaction th,
+  .transaction td {
+    padding: 0.75rem;
+    font-size: 0.9em;
+  }
+
+  .btns {
+    max-width: 100%;
+  }
 }

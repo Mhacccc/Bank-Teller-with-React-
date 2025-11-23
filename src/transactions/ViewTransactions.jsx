@@ -1,3 +1,4 @@
+import Back from "../components/Back"
 
 
 
@@ -27,7 +28,7 @@ export default function ViewTransaction({transaction}){
                                 <td>{e.dateTime}</td> 
                                 <td>{e.type}</td> 
                                 <td>{e.amount}</td> 
-                                
+
                             </tr>
                         )
                     })}
@@ -35,6 +36,7 @@ export default function ViewTransaction({transaction}){
 
            
             </table>
+            <Back></Back>
         </div>
     )
 }
