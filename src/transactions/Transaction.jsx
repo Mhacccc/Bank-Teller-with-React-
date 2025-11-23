@@ -6,9 +6,11 @@ import Deposit from "./Deposit"
 
 
 
-export default function Transaction(){
+export default function Transaction({onLogout}){
 
-    
+    const handleExit = () => {
+        onLogout()
+    }
 
     return(
         <div className="container">
@@ -26,9 +28,7 @@ export default function Transaction(){
                 <Link to="view-transaction">
                     <button className="btn">View Transaction</button>
                 </Link>
-                <Link to="/">
-                    <button className="btn">Exit</button>
-                </Link>
+                <button className="btn exit-btn" onClick={handleExit}>Exit</button>
                 
             </div>
         </div>
