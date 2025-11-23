@@ -33,7 +33,7 @@ export default function Deposit({balance,setBalance,transaction,setTransaction})
         }])
         setBalance(prev=>prev+Number(amount))
         setIsInvalid(false)
-
+        
         navigate("/")
 
 
