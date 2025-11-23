@@ -1,10 +1,12 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router";
 import Back from "../components/Back";
+import Transaction from "./Transaction";
+import setTransact from "../utils/setTransact";
 
 
 
-export default function Withdraw({balance,setBalance}){
+export default function Withdraw({balance,setBalance,transaction,setTransaction}){
 
     const navigate = useNavigate();
 
@@ -16,17 +18,20 @@ export default function Withdraw({balance,setBalance}){
     }
 
     const handleClick = () => {
-        if(Number(amount)>balance||amount<=0){
+        if(amount>balance||amount<=0){
             setIsInvalid(true);
             return;
         }
 
+        setTransact(amount,"Withdraw",transaction,setTransaction)
         setIsInvalid(false);
         setBalance(prev=>prev-amount);
         navigate("/");
     }
 
-
+    useEffect(()=>{
+        console.log(transaction)
+    },[transaction])
 
     return (
         <div className="balance">
