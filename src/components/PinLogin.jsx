@@ -111,7 +111,6 @@ export default function PinLogin({ onLogin }) {
                     </div>
                 )}
 
-                <p className="pin-demo">Demo PIN: 123456</p>
             </div>
         </div>
     )
