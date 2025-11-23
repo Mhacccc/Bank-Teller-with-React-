@@ -2,11 +2,8 @@ import { useEffect, useState } from "react"
 import Transaction from "./Transaction"
 import Back from "../components/Back"
 import { useNavigate } from "react-router"
+import setTransact from "../utils/setTransact";
 
-
-const now = new Date();
-
-const fullTimeString = now.toLocaleTimeString()
 
 
 
@@ -18,31 +15,28 @@ export default function Deposit({balance,setBalance,transaction,setTransaction})
     const [isInvalid,setIsInvalid] = useState(false)
     
     const handleChange = (e) => {
-        setAmount(e.target.value)
+        setAmount(Number(e.target.value))
     }
 
     const handleClick = () => {
-        if(Number(amount)<=0){
+        if(amount<=0){
             setIsInvalid(true)
             console.log(isInvalid)
             return;
         }
 
-        setTransaction([...transaction,{
-            dateTime:fullTimeString 
-        }])
+        setTransact(amount,"Deposit",transaction,setTransaction)
         setBalance(prev=>prev+Number(amount))
         setIsInvalid(false)
-        
-        navigate("/")
 
+        navigate("/")
 
     }
 
     useEffect(()=>{
+
         console.log(transaction)
     },[transaction])
-
 
 
     return (
