@@ -27,6 +27,7 @@ export default function ViewTransaction({transaction}){
                                 <td>{e.dateTime}</td> 
                                 <td>{e.type}</td> 
                                 <td>{e.amount}</td> 
+                                
                             </tr>
                         )
                     })}
