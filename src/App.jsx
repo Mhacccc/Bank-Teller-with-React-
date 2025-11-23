@@ -20,7 +20,7 @@ function App() {
         <Route path="check-balance" element={<CheckBalance balance={balance}/>} />
         <Route path="deposit" element={<Deposit setBalance={setBalance} balance={balance} transaction={transaction} setTransaction={setTransaction} />} />
         <Route path="withdraw" element={<Withdraw setBalance={setBalance} balance={balance} transaction={transaction} setTransaction={setTransaction}/>} />
-        <Route path="view-transaction" element={<ViewTransaction />} />
+        <Route path="view-transaction" element={<ViewTransaction transaction={transaction} />}  />
       </Routes>
       
     </>
